@@ -1,0 +1,112 @@
+{
+    "contractName": "StorageFactory",
+    "abi": [
+        {
+            "inputs": [],
+            "name": "createSimpleStorageContract",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }
+    ],
+    "metadata": "{\"compiler\":{\"version\":\"0.8.8+commit.dddeac2f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"createSimpleStorageContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/raafatmhanna/Desktop/Remix/contracts/StorageFactory.sol\":\"StorageFactory\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/raafatmhanna/Desktop/Remix/contracts/StorageFactory.sol\":{\"keccak256\":\"0x853af9fccc680bf1a2d876d4cebcf78eeeddbc9d0d8398116a2bcb504cc5561b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b6a60057daba75543fb9906529019e946668b0d3d01a2c2a54aa8838de69e1d2\",\"dweb:/ipfs/QmNQp14X9hJBcQ1CEUsg4Ln8QqxriWfiJjAd38p42L8dxv\"]}},\"version\":1}",
+    "bytecode": "6080604052348015600f57600080fd5b50606580601d6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c80631dda654114602d575b600080fd5b00fea2646970667358221220f4dc13ee8f3eed1d041589c6cfb21cabae0a82282d38a9e94bac2ff57a36908964736f6c63430008080033",
+    "deployedBytecode": "6080604052348015600f57600080fd5b506004361060285760003560e01c80631dda654114602d575b600080fd5b00fea2646970667358221220f4dc13ee8f3eed1d041589c6cfb21cabae0a82282d38a9e94bac2ff57a36908964736f6c63430008080033",
+    "sourceMap": "60:251:0:-:0;;;;;;;;;;;;;;;;;;;",
+    "deployedSourceMap": "60:251:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;137:172;",
+    "sourcePath": "/Users/raafatmhanna/Desktop/Remix/contracts/StorageFactory.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.8.8+commit.dddeac2f"
+    },
+    "ast": {
+        "absolutePath": "/Users/raafatmhanna/Desktop/Remix/contracts/StorageFactory.sol",
+        "exportedSymbols": {
+            "StorageFactory": [
+                6
+            ]
+        },
+        "id": 7,
+        "license": "MIT",
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 1,
+                "literals": [
+                    "solidity",
+                    "^",
+                    "0.8",
+                    ".8"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "32:23:0"
+            },
+            {
+                "abstract": false,
+                "baseContracts": [],
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "fullyImplemented": true,
+                "id": 6,
+                "linearizedBaseContracts": [
+                    6
+                ],
+                "name": "StorageFactory",
+                "nameLocation": "69:14:0",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "body": {
+                            "id": 4,
+                            "nodeType": "Block",
+                            "src": "183:126:0",
+                            "statements": []
+                        },
+                        "functionSelector": "1dda6541",
+                        "id": 5,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "createSimpleStorageContract",
+                        "nameLocation": "146:27:0",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 2,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "173:2:0"
+                        },
+                        "returnParameters": {
+                            "id": 3,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "183:0:0"
+                        },
+                        "scope": 6,
+                        "src": "137:172:0",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    }
+                ],
+                "scope": 7,
+                "src": "60:251:0",
+                "usedErrors": []
+            }
+        ],
+        "src": "32:279:0"
+    },
+    "functionHashes": {
+        "createSimpleStorageContract()": "1dda6541"
+    },
+    "gasEstimates": {
+        "creation": {
+            "codeDepositCost": "20200",
+            "executionCost": "75",
+            "totalCost": "20275"
+        },
+        "external": {
+            "createSimpleStorageContract()": "98"
+        }
+    }
+}
