@@ -7,30 +7,41 @@ pragma solidity ^0.8.8;
 import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 import"./PriceConverter.sol";
 
+// the const and the immutable are really great gas savers
+// we use const when we deal with global variables, but we use immutable vars when we deal with vars inside the function or constructors
 
+// custom error
+error NotOwner();
 contract FundMe {
 
   using  PriceConverter for uint256;
 
-    uint256 public  minimumUSD = 50 * 1e18; // 1 * 10 ** 18
+    uint256 public constant MINIMUM_USD = 50 * 1e18; // 1 * 10 ** 18 // it is a name convention to assigne names like this in capital letters and underscores to constants variable declaration
 
     address[] public funders;
     mapping (address => uint256) public addressToAmountFunded;
 
+    address public immutable i_owner; 
+
+    // it is a name convention to use i_var name with immutable 
+
+    constructor(){
+       i_owner = msg.sender;
+    }
       //we want to send an amount fund amount in USD
       //1. How do we send eth to this contract? 
     function fund() public payable {
-           require(msg.value.getConversionRate() >= minimumUSD, "Didn't send enough"); //1e18 == 1 * 10 ** 18 =100 
+           require(msg.value.getConversionRate() >= MINIMUM_USD, "Didn't send enough"); //1e18 == 1 * 10 ** 18 =100 
+          
            // 18 decimals
+           addressToAmountFunded[msg.sender] += msg.value;
            funders.push(msg.sender);
-           addressToAmountFunded[msg.sender] = msg.value;
-           
+
            //what is reverting?
            //undo any action before, and send remaining gas back
 }
 
-function withdraw() public{
-
+function withdraw() public onlyOwner{
   /*starting index, ending index, step amount*/
   for( uint256 funderIndex  = 0; funderIndex < funders.length ;funderIndex++){
 
@@ -52,6 +63,16 @@ function withdraw() public{
     require(callSuccess, "call failed");
 
 }
-    
+// this modifier is responsible for check if the require is applicable and then  deploying the contract withdraw after this
+    modifier  onlyOwner{
+      // require(msg.sender == i_owner, "Sender is not owner!");
+      if(msg.sender == i_owner){revert NotOwner();}
+        _;
+    }
+
+  // what happens if some one sends this contract ETH without calling the fund function
+
+  // receive
+  // callback
     }
  
