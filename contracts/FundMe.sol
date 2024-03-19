@@ -71,8 +71,13 @@ function withdraw() public onlyOwner{
     }
 
   // what happens if some one sends this contract ETH without calling the fund function
-
-  // receive
+    // receive
+       receive() external payable {
+        fund();
+        }
   // callback
+       fallback() external payable { 
+        fund();
+  }
     }
  
